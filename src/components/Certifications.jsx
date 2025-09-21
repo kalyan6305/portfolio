@@ -82,7 +82,7 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative min-h-screen px-10 py-20 bg-gradient-to-b from-[#0a192f] via-[#112240] to-[#1c2b4a] text-white overflow-hidden"
+      className="relative min-h-screen px-4 sm:px-6 md:px-10 py-16 sm:py-20 bg-gradient-to-b from-[#0a192f] via-[#112240] to-[#1c2b4a] text-white overflow-hidden"
     >
       {/* Heading */}
       <motion.h2
@@ -90,20 +90,20 @@ export default function Certifications() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 drop-shadow-lg"
+        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 drop-shadow-lg"
       >
          Certifications
       </motion.h2>
 
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4">
         {categories.map((cat) => (
           <motion.button
             key={cat}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setFilter(cat)}
-            className={`px-5 py-2 rounded-full font-medium border transition ${
+            className={`px-3 sm:px-5 py-2 rounded-full font-medium border transition text-xs sm:text-sm ${
               filter === cat
                 ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg"
                 : "bg-gray-800/40 text-gray-300 border-gray-600 hover:bg-gray-700/40"
@@ -117,7 +117,7 @@ export default function Certifications() {
       {/* Certifications Grid */}
       <motion.div
         layout
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 relative z-10"
       >
         <AnimatePresence>
           {filteredCerts.map((cert, index) => (
@@ -128,15 +128,15 @@ export default function Certifications() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.6 }}
-              className="relative bg-gradient-to-br from-gray-900/60 to-gray-800/40 backdrop-blur-xl border border-pink-500/20 rounded-2xl p-6 shadow-lg hover:shadow-pink-500/40 transition"
+              className="relative bg-gradient-to-br from-gray-900/60 to-gray-800/40 backdrop-blur-xl border border-pink-500/20 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-pink-500/40 transition"
             >
               {/* Title */}
-              <h3 className="text-2xl font-bold text-pink-300">{cert.title}</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-pink-300 leading-tight">{cert.title}</h3>
 
               {/* Issuer + Date */}
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-gray-300 text-sm sm:text-base">
                 {cert.issuer} <br />
-                <span className="text-sm text-gray-400">{cert.date}</span>
+                <span className="text-xs sm:text-sm text-gray-400">{cert.date}</span>
               </p>
 
               {/* View Certificate */}
@@ -144,8 +144,9 @@ export default function Certifications() {
                 href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="inline-block mt-6 px-5 py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block mt-4 sm:mt-6 px-4 sm:px-5 py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium shadow-md hover:shadow-lg transition text-sm sm:text-base"
               >
                 View Certificate
               </motion.a>

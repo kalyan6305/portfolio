@@ -10,9 +10,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative w-full bg-gradient-to-t from-[#0d1b2a] to-[#0a0f1f] py-20 overflow-hidden">
+    <footer className="relative w-full bg-gradient-to-t from-[#0d1b2a] to-[#0a0f1f] py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Full-Width Glass Board */}
-      <div className="w-full px-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-6 shadow-lg min-h-[220px]">
+      <div className="w-full px-4 sm:px-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 shadow-lg min-h-[180px] sm:min-h-[220px]">
 
         {/* Name / Branding - Full Width */}
         <motion.div
@@ -21,8 +21,8 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           className="text-center w-full text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-extrabold"
           style={{
-            fontSize: "clamp(3rem, 9vw, 5rem)", // slightly smaller to fit better
-            lineHeight: "1.1" // enough vertical space
+            fontSize: "clamp(2rem, 8vw, 4rem)", // smaller for mobile
+            lineHeight: "1.1"
           }}
         >
           Kalyan Nagu
@@ -30,7 +30,7 @@ export default function Footer() {
 
         {/* Social Icons */}
         <motion.div
-          className="flex gap-6 text-white text-3xl mt-4 md:mt-0"
+          className="flex gap-4 sm:gap-6 text-white text-2xl sm:text-3xl mt-4 md:mt-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -57,15 +57,15 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-gray-400 text-sm md:text-base text-center mt-4 md:mt-0 w-full"
+          className="text-gray-400 text-xs sm:text-sm md:text-base text-center mt-4 md:mt-0 w-full px-4"
         >
           © {new Date().getFullYear()} Kalyan Nagu. Built with using React, Tailwind CSS & Framer Motion.
         </motion.div>
       </div>
 
       {/* Animated Gradient Glow Circles */}
-      <div className="absolute -top-10 -left-10 w-36 h-36 bg-purple-500 rounded-full opacity-30 animate-pulse-slow blur-3xl"></div>
-      <div className="absolute -bottom-10 -right-10 w-52 h-52 bg-pink-500 rounded-full opacity-20 animate-pulse-slower blur-3xl"></div>
+      <div className="absolute -top-10 -left-10 w-24 sm:w-36 h-24 sm:h-36 bg-purple-500 rounded-full opacity-30 animate-pulse-slow blur-3xl"></div>
+      <div className="absolute -bottom-10 -right-10 w-32 sm:w-52 h-32 sm:h-52 bg-pink-500 rounded-full opacity-20 animate-pulse-slower blur-3xl"></div>
     </footer>
   );
 }
