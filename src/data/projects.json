@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Project Alpha",
+    "description": "A MERN stack app showcasing authentication and CRUD.",
+    "tech": [
+      "React",
+      "Node",
+      "Express",
+      "MongoDB"
+    ],
+    "github": "https://github.com/yourname/project-alpha",
+    "demo": "#"
+  },
+  {
+    "id": 2,
+    "title": "Portfolio Redesign",
+    "description": "A modern portfolio built with React and Tailwind.",
+    "tech": [
+      "React",
+      "Tailwind"
+    ],
+    "github": "https://github.com/yourname/portfolio",
+    "demo": "#"
+  }
+]
